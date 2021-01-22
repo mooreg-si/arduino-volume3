@@ -11,7 +11,7 @@
 class Volume
 {
   public:
-	void tone(uint8_t pin, uint16_t frequency, uint16_t volume);
+	void tone(uint8_t pin, uint16_t frequency, uint16_t volume, uint16_t beep = -1);
 	void noTone();
 };
 

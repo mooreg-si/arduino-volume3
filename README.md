@@ -69,9 +69,9 @@ Here is what you need to get started with the bare minimum:
 ----------
 # Functions
 
-**vol.tone**(byte **pin**, unsigned int **frequency**, unsigned int **volume**);
+**vol.tone**(byte **pin**, unsigned int **frequency**, unsigned int **volume**, unsigned int **beep**);
 
-*This is where the magic happens.* At the frequency you specify, your Arduino will analogWrite(**volume**) to the speaker with a PWM frequency of 100,000 Hz, for half the duration of a single period of the **frequency** before pulling it `LOW`. This high-speed PWM is beyond your range of hearing, (and probably the functioning range of your speaker) so it will just sound like a quieter or louder version of the input frequency!
+*This is where the magic happens.* At the frequency you specify, your Arduino will analogWrite(**volume**) to the speaker with a PWM frequency of 100,000 Hz, for half the duration of a single period of the **frequency** before pulling it `LOW`. This high-speed PWM is beyond your range of hearing, (and probably the functioning range of your speaker) so it will just sound like a quieter or louder version of the input frequency! There is an optional **beep** parameter that will allow you to specify a beep duration in milliseconds. If used, this will call vol.noTone() for you after the duration. This mimics the standard `tone()` function.
 
 **vol.noTone**();
 
